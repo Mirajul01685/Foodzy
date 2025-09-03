@@ -1,0 +1,17 @@
+
+@import "tailwindcss";
+@plugin "daisyui";
+@theme{
+    --color-primary: #F53E32;
+    --font-poppins : "poppins","sans-serif";
+    --font-libre : "Libra Franklin","sans-serif";
+    --font-noto : "Noto Sans","sans-serif";
+}
+@plugin "daisyui/theme" {
+    name : "light";
+    --color-primary: #F53E32;
+}
+@plugin "daisyui/theme" {
+    name : "dark";
+    --color-primary: #F53E32;
+}

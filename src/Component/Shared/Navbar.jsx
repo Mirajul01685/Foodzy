@@ -40,7 +40,7 @@ const Navbar = () => {
                         <RiArrowDropDownLine className='text-4xl '/>
                     </div>
 
-                    <div className={`absolute bg-white top-[40px] w-[220px] text-xl ${isDropDownOpen ?"h-[250px]":"h-0"} duration-300  overflow-auto`}> 
+                    <div className={`absolute z-[999] bg-white top-[40px] w-[220px] text-xl ${isDropDownOpen ?"h-[250px]":"h-0"} duration-300  overflow-auto`}> 
                         {
                             foodList.map((item ,index)=><div className='p-1 hover:bg-black/5' key={index}>{item}</div>)
                         }

@@ -15,13 +15,13 @@ const Home = () => {
          
           <Banner></Banner>
           <Discount></Discount>
-          <PopularProducts></PopularProducts>
-          <BannerDiscount></BannerDiscount>
+          {/* <PopularProducts></PopularProducts> */}
+          {/* <BannerDiscount></BannerDiscount>
           <Service></Service>
           <Deals></Deals>
           <ListBox></ListBox>
           <Testimonial></Testimonial>
-          <News></News>
+          <News></News> */}
         
           
         </div>

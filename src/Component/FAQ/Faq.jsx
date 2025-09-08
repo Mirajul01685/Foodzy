@@ -29,23 +29,20 @@ const Faq = () => {
     // কোন question খোলা আছে তার index রাখব (null মানে কিছুই খোলা নেই)
     const [openIndex, setOpenIndex] = useState(null);
 
-    const toggleAnswer = (index) => {
-        // একই index আবার click করলে বন্ধ হবে
-        setOpenIndex(openIndex === index ? null : index);
-    };
+  
 
     return (
         <div className='flex container mx-auto'>
-            <div className='w-full'>
-                <img src={faqimg} alt="FAQ" />
+            <div className='w-full h-auto'>
+                <img src={faqimg} className='w-full object-cover h-[350px]'  alt="FAQ" />
             </div>
-            <div className='flex flex-col gap-2 px-4 w-full h-[500px]'>
+            <div className='flex flex-col gap-2 px-4 w-full '>
                 {
                     faqs.map((item, index) => (
                         <div key={index} className='border p-4 rounded'>
                             <h1 
                                 className='flex justify-between items-center cursor-pointer font-semibold'
-                                onClick={() => toggleAnswer(index)}
+                                onClick={() => setOpenIndex(index)}
                             >
                                 {item.question}
                                 <span className='text-xl'>

@@ -16,7 +16,7 @@ const MainLayout = () => {
             <Outlet></Outlet>
             <Footer></Footer>
             <div>
-                <BottomMobileNav></BottomMobileNav>
+                {/* <BottomMobileNav></BottomMobileNav> */}
             </div>
         </div>
     );

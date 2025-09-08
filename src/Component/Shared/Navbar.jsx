@@ -21,7 +21,7 @@ const Navbar = () => {
             'Soup',
             
         ];
-        console.log(isDropDownOpen)
+       
     return (
         <>
             <div className='flex gap-4 justify-around items-center container mx-auto '>
@@ -35,7 +35,7 @@ const Navbar = () => {
              <div className='flex items-center h-[45px] w-[600px] '>
                     <input type="text" placeholder='Search For items...' className='flex-1 border focus:border-2 border-[#64B496] focus:outline-[#64B496] p-5 h-[45px] rounded-xl rounded-r-none' />
                    <div className='relative  '>
-                        <div onClick={()=>SetIsDropDwonOpen(prev=>!prev)} className='flex  h-[45px] p-5 items-center border border-r-0 border-l-0  focus:border-2 border-[#64B496] focus:outline-[#64B496]'>
+                        <div onClick={()=>SetIsDropDwonOpen(prev=>!prev)} className='flex  h-[45px] p-5 items-center border border-r-0 border-l-0 z-999 focus:border-2 border-[#64B496] focus:outline-[#64B496]'>
                         All Categories 
                         <RiArrowDropDownLine className='text-4xl '/>
                     </div>

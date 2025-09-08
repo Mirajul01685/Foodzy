@@ -1,6 +1,7 @@
 
 @import "tailwindcss";
 @plugin "daisyui";
+
 @theme{
     --color-primary: #F53E32;
     --font-poppins : "poppins","sans-serif";

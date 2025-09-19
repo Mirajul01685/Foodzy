@@ -1,10 +1,12 @@
 import React from 'react';
 import logo from '../../src/assets/Page-1 1.png'
+import PageName from '../Component/PageName/PageName';
 
 const SignUp = () => {
     return (
         <div className='mt-10'>
-             <div className='border border-black/10 rounded-lg w-[800px] px-5 container mx-auto space-y-3 '>
+            <PageName></PageName>
+             <div className='border border-black/10 rounded-lg w-[800px] px-5 mt-10 container mx-auto space-y-3 '>
                         <div className='flex items-center justify-center'>
                             <img className='w-20 h-20' src={logo} alt="Foodzy Logo" />
                             <div>

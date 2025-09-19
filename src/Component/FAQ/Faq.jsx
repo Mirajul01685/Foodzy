@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import faqimg from '../../assets/faq.img.png'
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
+import { NavLink } from 'react-router';
+import PageName from '../PageName/PageName';
 
 const faqs = [
     {
@@ -26,41 +28,54 @@ const faqs = [
 ];
 
 const Faq = () => {
-    // কোন question খোলা আছে তার index রাখব (null মানে কিছুই খোলা নেই)
-    const [openIndex, setOpenIndex] = useState(null);
 
-  
+    const [selectArrow, SetSellectArrow] = useState()
+    
+
 
     return (
-        <div className='flex container mx-auto'>
-            <div className='w-full h-auto'>
-                <img src={faqimg} className='w-full object-cover h-[350px]'  alt="FAQ" />
-            </div>
-            <div className='flex flex-col gap-2 px-4 w-full '>
-                {
-                    faqs.map((item, index) => (
-                        <div key={index} className='border p-4 rounded'>
-                            <h1 
-                                className='flex justify-between items-center cursor-pointer font-semibold'
-                                onClick={() => setOpenIndex(index)}
-                            >
-                                {item.question}
-                                <span className='text-xl'>
-                                    {openIndex === index ? <BiChevronUp /> : <BiChevronDown />}
-                                </span>
-                            </h1>
 
-                            {/* শুধু current খোলা index এর answer show হবে */}
-                            {openIndex === index && (
-                                <div className='mt-2 text-gray-600'>
-                                    {item.answer}
+
+
+
+        <div>
+            
+            <div>
+                <PageName></PageName>
+            </div>
+            <div className='container mx-auto'>
+                <div className='grid grid-cols-2  w-fit container mx-auto  mt-10'>
+                    <div className=' w-fit '>
+                        <img src={faqimg} className='rounded-xl ' alt="FAQ" />
+                    </div>
+                    <div className='grid gap-2 px-4 '>
+                        {
+                            faqs.map((item, index) => (
+                                <div key={index} className='border w-[600px] p-4 rounded-xl'>
+                                    <h1
+                                        className='flex justify-between items-center cursor-pointer font-semibold'
+                                        onClick={() => SetSellectArrow(index)}
+                                    >
+                                        {item.question}
+                                        <span className='text-xl'>
+                                            {selectArrow === index ? <BiChevronUp /> : <BiChevronDown />}
+                                        </span>
+                                    </h1>
+
+
+                                    {selectArrow === index && (
+                                        <div className='mt-2 text-gray-600'>
+                                            {item.answer}
+                                        </div>
+                                    )}
                                 </div>
-                            )}
-                        </div>
-                    ))
-                }
+                            ))
+                        }
+                    </div>
+                </div>
             </div>
         </div>
+
     );
 };
 

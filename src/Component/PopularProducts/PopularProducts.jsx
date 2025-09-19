@@ -97,7 +97,7 @@ const PopularProducts = () => {
                 <h1 className='font-poppins font-regular text-lg text-[#7A7A7A]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id neque <br /> assumenda ex amet qui atque?
                 </h1>
             </div>
-            <div className='flex gap-3 py-5'>
+            <div className='md:flex gap-3 py-5'>
                 <div className=''>
                     <h1 className='flex items-center gap-20 justify-between rounded  p-2 m-2 bg-black/5 text-primary'>All < FaArrowRight className='' /></h1>
                     <h1 className='flex items-center gap-20 justify-between rounded  p-2 m-2 bg-black/5'>Snack < FaArrowRight className='' /></h1>
@@ -105,9 +105,9 @@ const PopularProducts = () => {
                     <h1 className='flex items-center gap-20 justify-between rounded  p-2 m-2 bg-black/5'>Fruit < FaArrowRight className='' /></h1>
                     <h1 className='flex items-center gap-20 justify-between rounded  p-2 m-2 bg-black/5'>Bakery < FaArrowRight className='' /></h1>
 
-                    <div className=' relative'>
+                    <div className=' relative flex justify-center py-4'>
                         <img className='w-[320px] h-[680px]' src={bannerLeft} alt="" />
-                        <div className=' absolute right-0 top-30 left-5'>
+                        <div className=' absolute  top-30 md:left-5'>
                             <h1 className='text-white text-5xl font-semibold p-2 font-libre '>Juicy</h1>
                             <h1 className='text-[#F7E8AA] text-5xl p-2 font-black font-noto'>FRUITS</h1>
                             <h1 className='text-white text-xl p-2 font-regular font-poppins'>100% Natural</h1>
@@ -117,15 +117,15 @@ const PopularProducts = () => {
                         </div>
                     </div>
                 </div>
-                <div className='grid grid-cols-3 gap-3 '>
+                <div className='grid md:grid-cols-3 gap-3 '>
                     {
                         products.map((item, index) =>
                             <div key={index} className='text-center border-2 border-black/10 rounded-xl' >
                                 <div className=' relative'>
                                     <h1 className='container mx-auto p-2 '>{item.img} </h1>
                                 </div>
-                                <div className=' absolute -mt-7 '>
-                                    <img className=' flex pl-36 ' src={CartImg} alt="" />
+                                <div className=' absolute translate-x-1/2 -mt-7 '>
+                                    <img className=' flex pl-42 md:pl-25 ' src={CartImg} alt="" />
                                 </div>
                                 <div className='p-3'>
                                     <h1 className='text-lg font-libre text-[#777777]'>{item.subtitle}</h1>

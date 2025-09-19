@@ -9,6 +9,7 @@ import FAQ from "../Component/FAQ/Faq";
 import Error from '../Component/ErrorElement/Error'
 import Login from "../Auth/Login";
 import SignUp from "../Auth/SignUp";
+import Cart from "../Component/Cart/Cart";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
         {
           path : "/signup",
           element : <SignUp/>
+        },
+        {
+          path : "/cart",
+          element : <Cart/>
         },
          
     ]

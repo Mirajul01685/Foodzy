@@ -6,7 +6,7 @@ import { MdOutlinePayment } from "react-icons/md";
 
 const Service = () => {
     return (
-        <div className='grid grid-cols-4 gap-4 container mx-auto m-10  '>
+        <div className='grid md:grid-cols-4 gap-4 px-2 container mx-auto m-10  '>
             <div className='bg-black/5 p-10 pt-10  rounded-xl  '>
                 <h1 className='text-5xl flex justify-center pb-5'><GiBoxUnpacking /></h1>
                 <h1 className='font-poppins font-semibold text-xl text-center text-black'>Product Packing</h1>

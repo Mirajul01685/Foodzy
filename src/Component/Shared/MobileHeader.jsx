@@ -13,7 +13,7 @@ const MobileHeader = () => {
         { name: "FAQ", link: "/FAQ" },
     ]
     return (
-        <div className='md:hidden fixed top-0  z-9999 bg-primary'>
+        <div className='md:hidden w-full fixed top-0  z-9999 bg-primary'>
             <div className='  flex justify-between items-center text-white px-4'>
                 <div className='flex items-center'>
                     <img className='w-20 h-20' src={logo} alt="Foodzy Logo" />

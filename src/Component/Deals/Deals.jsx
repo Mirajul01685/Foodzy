@@ -13,9 +13,9 @@ const Deals = () => {
                     height: '600px',
                     
                 }}
-                className="flex items-center bg-fixed  "
+                className="md:flex items-center bg-fixed pt-16 pl-10 md:pl-0 md:pt-0  "
             >
-                <div className="bg-white/95 max-w-lg p-8 m-10 ml-50 rounded-2xl shadow-md ">
+                <div className="bg-white/95 md:max-w-lg p-5 md:p-8 m-10 md:m-10 ml-0  md:ml-50 rounded-2xl shadow-md ">
                     <div className="flex items-center gap-1">
                         <h1 className="font-poppins text-xl font-bold text-primary">35%</h1>
                         <h1 className="text-[12px] font-normal text-[#777777] font-poppins">OFF</h1>
@@ -30,10 +30,10 @@ const Deals = () => {
                     </p>
 
 
-                    <div className='pt-3'>
+                    <div className='pt-3 '>
                         {/* For TSX uncomment the commented types below */}
-                        <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
-                            <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+                        <div className="grid grid-flow-col w-fit gap-5 text-center auto-cols-max ">
+                            <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content ">
                                 <span className="countdown font-mono text-5xl">
                                     <span style={{ "--value": 15 } /* as React.CSSProperties */} >15</span>
                                 </span>

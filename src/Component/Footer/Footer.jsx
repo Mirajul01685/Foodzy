@@ -5,7 +5,7 @@ import footerimg from '../../assets/footerimg.png'
 const Footer = () => {
     return (
         <div className=' bg-base-200 mt-10 mb-20 md:mb-0  pb-2'>
-            <footer className="footer sm:footer-horizontal text-base-content p-10 container mx-auto">
+            <footer className="footer  md:footer-horizontal text-base-content p-10 container mx-auto">
                 <aside>
                     <img src={logo} alt="" />
                     <p>

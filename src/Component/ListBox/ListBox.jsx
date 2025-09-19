@@ -5,17 +5,17 @@ import list3 from '../../assets/Section → products-rightview.jpg.png'
 
 const ListBox = () => {
     return (
-        <div className='grid grid-cols-4 gap-3 container mx-auto mb-10'>
-            <img className='rounded-xl h-[400px] w-full' src={list1} alt="" />
+        <div className='grid md:grid-cols-4 gap-3 container p-3 mx-auto mb-10 '>
+            <img className='border rounded-xl h-[400px] w-full' src={list1} alt="" />
             <img className='rounded-xl h-[400px] w-full' src={list2} alt="" />
             <div style={{
                 backgroundImage:`url(${list3})`,
-                background:'cover',
-                 backgroundPosition: "center",
-                 height: "400px",
-            }} className='rounded-xl h-[400px] w-full col-span-2'>
                 
-                <div className=' absolute right-40 mt-30'>
+                 height: "400px",
+                 
+            }} className='bg-cover bg-no-repeat bg-center w-full rounded-xl h-[400px]  md:col-span-2 relative '>
+                
+                <div className=' absolute top-1/2 right-10 -translate-y-1/2'>
                     <h1 className='font-libre font-bold text-xl text-[#2B2B2D] pb-2'>Healthy <br />
                         Bakery Products</h1>
                    <div className='flex items-center'> 

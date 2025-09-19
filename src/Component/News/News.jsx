@@ -14,7 +14,7 @@ const News = () => {
                 </div>
             </div>
 
-            <div className='grid grid-cols-3 gap-3 container mx-auto mt-10'>
+            <div className='grid md:grid-cols-3 gap-3 container mx-auto mt-10'>
 
                 <div className='border border-black/10 rounded-xl  '>
                     <div className='p-10'>
@@ -24,12 +24,17 @@ const News = () => {
                         <h1 className='text-lg text-[#64B496] font-bold font-libre'>Read More</h1>
                     </div>
                     <div className=' relative '>
-                        <img className='w-full' src={news3} alt="" />
-                    </div>
-                    <div className=' absolute border p-3 bg-black/80 rounded-xl -mt-22 left-225 z-999'>
+                        <div>
+                            <img className='w-full' src={news3} alt="" />
+                        </div>
+
+                        <div className=' absolute border p-3 bg-black/80 rounded-xl bottom-10 right-10'>
                         <h1 className='text-white'>10</h1>
                         <h1 className='text-white'>Oct</h1>
                     </div>
+
+                    </div>
+                    
                 </div>
 
                 <div className='border border-black/10 rounded-xl  '>
@@ -40,12 +45,15 @@ const News = () => {
                         <h1 className='text-lg text-[#64B496] font-bold font-libre'>Read More</h1>
                     </div>
                     <div className=' relative '>
-                        <img className='w-full' src={news2} alt="" />
-                    </div>
-                    <div className=' absolute border p-3 bg-black/80 rounded-xl -mt-22 left-332 z-99'>
+                       <div>
+                         <img className='w-full' src={news2} alt="" />
+                       </div>
+                       <div className=' absolute border p-3 bg-black/80 rounded-xl bottom-10 right-10 '>
                         <h1 className='text-white'>10</h1>
                         <h1 className='text-white'>Oct</h1>
                     </div>
+                    </div>
+                    
                 </div>
 
                 <div className='border border-black/10 rounded-xl  '>
@@ -55,12 +63,15 @@ const News = () => {
                         <h1 className='text-lg text-[#64B496] font-bold font-libre'>Read More</h1>
                     </div>
                     <div className=' relative '>
-                        <img className='w-full' src={news1} alt="" />
-                    </div>
-                    <div className=' absolute border p-3 bg-black/80 rounded-xl -mt-22 left-118'>
+                        <div>
+                            <img className='w-full' src={news1} alt="" />
+                        </div>
+                        <div className=' absolute border p-3 bg-black/80 rounded-xl bottom-10 right-10'>
                         <h1 className='text-white'>10</h1>
                         <h1 className='text-white'>Oct</h1>
                     </div>
+                    </div>
+                    
                 </div>
 
             </div>

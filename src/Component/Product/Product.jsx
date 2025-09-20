@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PageName from '../PageName/PageName';
 import { BiSolidSquare } from 'react-icons/bi';
 import { BiSquare } from 'react-icons/bi';
@@ -19,6 +19,7 @@ import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 
 import CartImg from '../../assets/cartImg.png'
+import { GoStar, GoStarFill } from 'react-icons/go';
 
 
 
@@ -76,6 +77,8 @@ const products = [
 ];
 
 const Product = () => {
+    const [sellectTab, setSellectTab] = useState("description")
+    const [viewImg ,setViewImg] =useState(product2)
     return (
         <div className='container mx-auto'>
             <PageName></PageName>
@@ -221,13 +224,13 @@ const Product = () => {
                     </div>
 
                     <div className=' -ml-45 rounded-xl w-fit h-fit  '>
-                        <img className='w-[550px]' src={product2} alt="" />
-                        <div className='flex gap-2 mt-5 mb-8 '>
-                            <img className='w-26' src={Listbox1} alt="" />
-                            <img className='w-26' src={Listbox2} alt="" />
-                            <img className='w-26' src={Listbox3} alt="" />
-                            <img className='w-26' src={Listbox4} alt="" />
-                            <img className='w-26' src={Listbox5} alt="" />
+                        <img className='w-full' src={viewImg} alt="" />
+                        <div className='flex gap-2 mt-5 mb-8  '>
+                            <img  onClick={()=>setViewImg(product2)} className='w-26' src={Listbox1} alt="" />
+                            <img onClick={()=>setViewImg(Listbox2)} className='w-26' src={Listbox2} alt="" />
+                            <img  onClick={()=>setViewImg(Listbox3)} className='w-26' src={Listbox3} alt="" />
+                            <img  onClick={()=>setViewImg(Listbox4)} className='w-26' src={Listbox4} alt="" />
+                            <img  onClick={()=>setViewImg(Listbox5)} className='w-26' src={Listbox5} alt="" />
 
                         </div>
                     </div>
@@ -305,15 +308,40 @@ const Product = () => {
                     </div>
                 </div>
             </div>
-            <div className=' absolute inset-x-[27%] w-[64%] -bottom-[50%] rounded-lg p-4 border border-black/10'>
-                <div className='flex gap-5 items-center'>
-                    <h1 className='font-semibold text-xl'>Description</h1>
-                    <h1 className='font-semibold text-xl'>Review</h1>
+            <div className=' absolute inset-x-[27%] w-[64%] -bottom-[70%] rounded-lg p-4 border border-black/10'>
+                <div className='flex gap-5 items-center border-b-2 border-black/10 '>
+                    <h1 onClick={() => (setSellectTab("description"))} className={`font-semibold text-xl py-4 ${sellectTab == "description" && " border-b-4 border-green-300"}`}>Description</h1>
+                    <h1 onClick={() => setSellectTab("review")} className={`font-semibold text-xl py-4 ${sellectTab == "review" && " border-b-4 border-green-300"}`}>Review</h1>
                 </div>
-                <hr className='text-black/10 mt-3' />
-                <p className='mt-2 text-lg'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio tempora deleniti, dolorem ducimus accusamus quibusdam quisquam iste earum magni velit, cumque necessitatibus vel odio natus culpa? Dolorum asperiores nemo quia.accusamus quibusdam quisquam iste earum magni velit, cumque necessitatibus vel odio natus culpa? Dolorum asperiores nemo quia.</p>
 
-                <div className='flex gap-5 items-center mt-3'>
+                {
+                    sellectTab == ("description") ? <p className='mt-2 text-lg'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio tempora deleniti, dolorem ducimus accusamus quibusdam quisquam iste earum magni velit, cumque necessitatibus vel odio natus culpa? Dolorum asperiores nemo quia.accusamus quibusdam quisquam iste earum magni velit, cumque necessitatibus vel odio natus culpa? Dolorum asperiores nemo quia.</p> :
+                        <div className="flex gap-5 items-center p-2">
+                            <div className="avatar">
+                                <div className="w-24 rounded-full">
+                                    <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
+                                </div>
+                            </div>
+
+                            <div className="">
+                                <Rating
+                                    emptySymbol={<GoStar className="text-2xl text-primary" />}
+                                    fullSymbol={<GoStarFill className="text-2xl text-primary" />}
+                                    initialRating={4}
+                                    readonly
+                                />
+
+                                <p className="text-lg">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                    Voluptatum ut tempore et. Sapiente doloremque temporibus
+                                    numquam in repudiandae cumque fugit? Aspernatur perspiciatis
+                                    error vero placeat, eos illum delectus alias possimus?
+                                </p>
+                            </div>
+                        </div>
+                }
+
+                <div className='flex gap-5 items-center mt-8'>
                     <h1 className='font-semibold text-xl'>Packing & Delivery</h1>
 
                 </div>
@@ -321,7 +349,7 @@ const Product = () => {
                 <p className='mt-2 text-lg '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio tempora deleniti, dolorem ducimus accusamus quibusdam quisquam iste earum magni velit, cumque necessitatibus vel odio natus culpa? Dolorum asperiores nemo quia.accusamus quibusdam quisquam iste earum magni velit, cumque necessitatibus vel odio natus culpa? Dolorum asperiores nemo quia.</p>
             </div>
 
-            <div className='mt-25'>
+            <div className='mt-60'>
                 <div className='text-center'>
                     <h1 className='font-libre font-bold text-4xl text-[#2B2B2D]'> Popular Products</h1>
                     <h1 className='font-poppins font-regular text-lg text-[#7A7A7A]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id neque <br /> assumenda ex amet qui atque?

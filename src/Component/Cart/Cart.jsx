@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageName from '../PageName/PageName';
 import { products } from '../../Data/PopularProductData';
@@ -65,8 +66,8 @@ const Cart = () => {
                                             <h1 className='text-xl font-medium font-poppins'>{item.title}</h1>
 
                                             <div className='flex gap-2 justify-center pt-2 items-center'>
-                                                <h1 className='text-2xl font-poppins font-bold text-[#F53E32]'>{item.discountedPrice}</h1>
-                                                <h1 className='line-through text-lg text-[#7A7A7A] font-poppins font-regular'>{item.originalPrice}</h1>
+                                                <h1 className='text-2xl font-poppins font-bold text-[#F53E32]'>${item.discountedPrice}</h1>
+                                                <h1 className='line-through text-lg text-[#7A7A7A] font-poppins font-regular'>${item.originalPrice}</h1>
                                             </div>
                                         </div>
                                     </div>

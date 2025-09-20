@@ -10,6 +10,7 @@ import Error from '../Component/ErrorElement/Error'
 import Login from "../Auth/Login";
 import SignUp from "../Auth/SignUp";
 import Cart from "../Component/Cart/Cart";
+import Checkout from "../Component/Checkout/Checkout";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
         {
           path : "/cart",
           element : <Cart/>
+        },
+        {
+          path : "/Checkout",
+          element :<Checkout></Checkout>
         },
          
     ]

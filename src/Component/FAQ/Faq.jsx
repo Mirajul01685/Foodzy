@@ -43,9 +43,9 @@ const Faq = () => {
             <div>
                 <PageName></PageName>
             </div>
-            <div className='container mx-auto'>
-                <div className='grid grid-cols-2  w-fit container mx-auto  mt-10'>
-                    <div className=' w-fit '>
+            <div className='container mx-auto '>
+                <div className='grid md:grid-cols-2 w-full md:w-fit container mx-auto  mt-10'>
+                    <div className='w-full md:w-fit '>
                         <img src={faqimg} className='rounded-xl ' alt="FAQ" />
                     </div>
                     <div className='grid gap-2 px-4 '>

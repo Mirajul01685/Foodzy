@@ -6,7 +6,7 @@ const About = () => {
     return (
         <div className='container mx-auto mt-5'>
             <PageName></PageName>
-           <div className='w-[700px]  mt-10'>
+           <div className='w-full md:w-[700px] p-2 md:p-0  mt-10'>
                 <h2 className='font-bold text-3xl'>About The Carrot</h2>
                 <p className='text-[#7a7a7a] text-lg my-4'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, illo quia! Aut optio facilis, nulla esse fugiat voluptatem odio suscipit deserunt aspernatur obcaecati enim velit.Aut optio facilis, nulla esse fugiat voluptatem odio suscipit deserunt aspernatur obcaecati enim velit?</p>
                 <p className='text-[#7a7a7a] text-lg my-4'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, illo quia! Aut optio facilis, nulla esse fugiat voluptatem odio suscipit deserunt aspernatur obcaecati enim velit.Aut optio facilis, nulla esse fugiat voluptatem odio suscipit deserunt aspernatur obcaecati enim velit?</p>

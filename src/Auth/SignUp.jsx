@@ -6,7 +6,7 @@ const SignUp = () => {
     return (
         <div className='mt-10'>
             <PageName></PageName>
-             <div className='border border-black/10 rounded-lg w-[800px] px-5 mt-10 container mx-auto space-y-3 '>
+             <div className='border border-black/10 rounded-lg w-full md:w-[800px] px-5 mt-10 container mx-auto space-y-3 '>
                         <div className='flex items-center justify-center'>
                             <img className='w-20 h-20' src={logo} alt="Foodzy Logo" />
                             <div>
@@ -15,7 +15,7 @@ const SignUp = () => {
                             </div>
                         </div>
 
-                        <div className='flex gap-4 justify-center items-center'>
+                        <div className='md:flex gap-4 justify-center items-center'>
                             <fieldset className="fieldset">
                             <legend className="fieldset-legend text-xl ">First Name*</legend>
                             <input type="text" className="input w-[350px]" placeholder="Enter Your First Name" />
@@ -27,7 +27,7 @@ const SignUp = () => {
             
                         </div>
 
-                        <div className='flex gap-4 justify-center items-center'>
+                        <div className='md:flex gap-4 justify-center items-center'>
                             <fieldset className="fieldset">
                             <legend className="fieldset-legend text-xl ">Email*</legend>
                             <input type="text" className="input w-[350px]" placeholder="Enter Your Email" />
@@ -39,14 +39,14 @@ const SignUp = () => {
             
                         </div>
 
-                        <div className='flex gap-4 justify-center items-center'>
+                        <div className='md:flex gap-4 justify-center items-center'>
                              <fieldset className="fieldset">
                             <legend className="fieldset-legend text-xl ">Address*</legend>
-                            <input type="text" className="input w-[716px]" placeholder="Enter Your Email" />
+                            <input type="text" className="input w-[350px] md:w-[716px]" placeholder="Enter Your Email" />
                         </fieldset>
                         </div>
 
-                        <div className='flex gap-4 justify-center items-center'>
+                        <div className='md:flex gap-4 justify-center items-center'>
                             <fieldset className="fieldset">
                             <legend className="fieldset-legend text-xl ">City*</legend>
                             <input type="text" className="input w-[350px]" placeholder="City" />
@@ -58,7 +58,7 @@ const SignUp = () => {
             
                         </div>
 
-                        <div className='flex gap-4 justify-center items-center'>
+                        <div className='md:flex gap-4 justify-center items-center'>
                             <fieldset className="fieldset">
                             <legend className="fieldset-legend text-xl ">Country*</legend>
                             <input type="text" className="input w-[350px]" placeholder="Country" />

@@ -13,11 +13,12 @@ const Login = () => {
 
         const email = e.target.email.value;
         const password = e.target.password.value;
+        console.log({email,password});
         if (!email && !password) {
             return setError("Email and password are required")
         }
-        setError("");
-         console.log({email,password});
+       
+         
     }
        
     
@@ -25,7 +26,7 @@ const Login = () => {
     return (
         <div>
             <PageName></PageName>
-            <div className='border mt-10 border-black/10 rounded-lg w-[500px] px-5 container mx-auto  '>
+            <div className='border mt-30  md:mt-10 border-black/10 rounded-lg w-full  md:w-[500px] md:px-5 px-4 container mx-auto  '>
                 <div className='flex items-center justify-center max-w-lg w-full p-10 mb-10 bg-primary shadow-md '>
                     <img className='w-32 h-32 ' src={logo} alt="Foodzy Logo" />
                     <div>
@@ -38,7 +39,7 @@ const Login = () => {
                     <div className='flex flex-col justify-center items-center'>
                         <fieldset className="fieldset">
                             <legend className="fieldset-legend text-xl ">Email Address*</legend>
-                            <input type="text" name='email' className="input w-[400px] focus:outline-0 focus:border-primary" placeholder="Enter Your Email" />
+                            <input type="text" name='email' required className="input w-[400px] focus:outline-0 focus:border-primary" placeholder="Enter Your Email" />
                         </fieldset>
                         <fieldset className="fieldset relative">
                             <legend className="fieldset-legend text-xl">Password*</legend>

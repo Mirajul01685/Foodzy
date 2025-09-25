@@ -13,7 +13,7 @@ const Cart = () => {
         <div className='container mx-auto'>
             <PageName></PageName>
             <div>
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto mt-30 md:mt-10 w-full  md:w-auto">
                     <table className="table bg-[#F7F7F8]">
                         {/* head */}
                         <thead className="bg-[#E9E9E9]">

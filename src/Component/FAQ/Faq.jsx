@@ -45,13 +45,13 @@ const Faq = () => {
             </div>
             <div className='container mx-auto '>
                 <div className='grid md:grid-cols-2 w-full md:w-fit container mx-auto  mt-10'>
-                    <div className='w-full md:w-fit '>
+                    <div className='w-full mb-10 md:mb-0 md:w-fit '>
                         <img src={faqimg} className='rounded-xl ' alt="FAQ" />
                     </div>
                     <div className='grid gap-2 px-4 '>
                         {
                             faqs.map((item, index) => (
-                                <div key={index} className='border w-[600px] p-4 rounded-xl'>
+                                <div key={index} className='border md:w-[600px] p-4 rounded-xl'>
                                     <h1
                                         className='flex justify-between items-center cursor-pointer font-semibold'
                                         onClick={() => SetSellectArrow(index)}

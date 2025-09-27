@@ -19,6 +19,7 @@ import Stack from '@mui/material/Stack';
 
 import CartImg from '../../assets/cartImg.png'
 import { GoStar, GoStarFill } from 'react-icons/go';
+import { Link } from 'react-router';
 
 
 
@@ -83,7 +84,7 @@ const Product = () => {
             <PageName></PageName>
             <div className='  relative'>
                 <div className='grid md:grid-cols-3 mt-20'>
-                    <div className='w-[300px] border border-black/10 p-5 bg-black/1 rounded-lg  ' >
+                    <div className='w-full md:w-[300px] border border-black/10 p-5 bg-black/1 rounded-lg  ' >
                         <div>
                             <h1 className=' text-2xl pb-3'>Product Category</h1>
                             <hr className='text-black/30 pb-3' />
@@ -117,7 +118,7 @@ const Product = () => {
                             <div>
                                 <h1 className=' text-2xl pb-3'>Filter By Price</h1>
                                 <hr className='text-black/30 pb-3' />
-                                <input type="range" min={0} max="100" value="auto" className="range  range-primary" />
+                                <input type="range" min={0} max="100"  className="range  range-primary" />
                                 <div className='flex gap-3'>
                                     <p className='font-bold text-lg'>Price:</p>
                                     <p className='text-lg font-bold text-black/50'>$20 - $250</p>
@@ -224,7 +225,7 @@ const Product = () => {
 
                     <div className=' -ml-0 md:-ml-45 rounded-xl w-fit h-fit  '>
                         <img className='w-[550px]' src={viewImg} alt="" />
-                        <div className='flex gap-1 md:gap-2 mt-5 mb-8 w-full md:w-0 '>
+                        <div className='flex md:gap-2 mt-5 mb-8 md:w-full  '>
                             <img onClick={() => setViewImg(product2)} className='w-26' src={Listbox1} alt="" />
                             <img onClick={() => setViewImg(Listbox2)} className='w-26' src={Listbox2} alt="" />
                             <img onClick={() => setViewImg(Listbox3)} className='w-26' src={Listbox3} alt="" />
@@ -307,7 +308,7 @@ const Product = () => {
                     </div>
                 </div>
             </div>
-            <div className=' absolute md:inset-x-[27%] md:w-[64%] -md:bottom-[120%] rounded-lg p-4 border border-black/10'>
+            <div className=' absolute md:inset-x-[27%] md:w-[64%] md:-bottom-[60%] rounded-lg p-4 border border-black/10'>
                 <div className='flex gap-5 items-center border-b-2 border-black/10 '>
                     <h1 onClick={() => (setSellectTab("description"))} className={`font-semibold text-xl py-4 ${sellectTab == "description" && " border-b-4 border-green-300"}`}>Description</h1>
                     <h1 onClick={() => setSellectTab("review")} className={`font-semibold text-xl py-4 ${sellectTab == "review" && " border-b-4 border-green-300"}`}>Review</h1>
@@ -353,6 +354,7 @@ const Product = () => {
                     <h1 className='font-libre font-bold text-4xl text-[#2B2B2D]'> Popular Products</h1>
                     <h1 className='font-poppins font-regular text-lg text-[#7A7A7A]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id neque <br /> assumenda ex amet qui atque?
                     </h1>
+                    <Link to={"/product/1"}>
                     <div className='grid md:grid-cols-4 gap-3 mt-10'>
                         {
                             products.map((item, index) =>
@@ -361,7 +363,7 @@ const Product = () => {
                                         <h1 className='container mx-auto p-2 w-[300px] h-[280px]'>{item.img} </h1>
                                     </div>
                                     <div className=' absolute translate-x-1/2 -mt-3 '>
-                                        <img className=' flex pl-42 md:pl-25 ' src={CartImg} alt="" />
+                                        <img className=' flex pl-30 md:pl-25 ' src={CartImg} alt="" />
                                     </div>
                                     <div className='p-3 mt-5'>
                                         <h1 className='text-lg font-libre text-[#777777]'>{item.subtitle}</h1>
@@ -382,6 +384,7 @@ const Product = () => {
                             )
                         }
                     </div>
+                    </Link>
                 </div>
 
             </div>

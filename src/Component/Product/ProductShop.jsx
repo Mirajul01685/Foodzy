@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PageName from '../PageName/PageName';
 import { BiSolidSquare, BiSquare } from 'react-icons/bi';
 import { IoMdGrid } from "react-icons/io";
@@ -9,11 +9,15 @@ import { products } from '../../Data/PopularProductData';
 import CartImg from '../../assets/cartImg.png'
 
 const ProductShop = () => {
+    const [openLeftSide , setOpenLeftSide] = useState(false)
+   
+    
     return (
         <div className='container mx-auto'>
             <PageName></PageName>
-            <div className='grid grid-cols-4 '>
-                <div className=' mt-10 w-[300px] border border-black/10 p-5 bg-black/1 rounded-lg'>
+            <div className='grid md:grid-cols-4 mt-15 md:mt-0 '>
+                {
+                    openLeftSide?<div className='mt-10 w-[400px] ml-5 md:ml-0 md:w-[300px] h-fit border border-black/10 p-5 bg-black/1 rounded-lg'>
                     <div>
                         <h1 className=' text-2xl pb-3'>Product Category</h1>
                         <hr className='text-black/30 pb-3' />
@@ -47,7 +51,7 @@ const ProductShop = () => {
                         <div>
                             <h1 className=' text-2xl pb-3'>Filter By Price</h1>
                             <hr className='text-black/30 pb-3' />
-                            <input type="range" min={0} max="100" value="auto" className="range  range-primary" />
+                            <input type="range" min={0} max="100" className="range  range-primary" />
                             <div className='flex gap-3'>
                                 <p className='font-bold text-lg'>Price:</p>
                                 <p className='text-lg font-bold text-black/50'>$20 - $250</p>
@@ -150,14 +154,16 @@ const ProductShop = () => {
                             </button>
                         </div>
                     </div>
-                </div>
+                </div> : ""
+                }
+                
 
-                <div className=' mt-10 col-span-3'>
+                <div className={`mt-10  ${openLeftSide? 'col-span-3':'col-span-4'}`}>
 
                     <div className='  flex justify-between p-3 px-5 bg-black/5 rounded-lg '>
                         <div className='flex text-3xl  gap-3 '>
-                            <IoMdGrid className='bg-primary text-white'></IoMdGrid>
-                            <CiBoxList className='bg-white'></CiBoxList>
+                            <IoMdGrid onClick={()=> setOpenLeftSide(prev=>!prev)} className={` ${openLeftSide?'bg-primary text-white':'bg-white text-[#7a7a7a] text-4xl'}`}></IoMdGrid>
+                            <CiBoxList className={` ${openLeftSide?' text-balck':'bg-primary text-white text-4xl'}`}></CiBoxList>
                             <p className='text-2xl pl-6 text-[#7a7a7a]'>We found 29 items for you!</p>
                         </div>
                         <div className=' flex text-2xl items-center bg-white px-3 rounded-lg'>
@@ -166,16 +172,16 @@ const ProductShop = () => {
                         </div>
                     </div>
 
-                    <div className='grid md:grid-cols-3 gap-3 mt-10'>
+                    <div className={`grid  gap-3 mt-10 ${openLeftSide?'md:grid-cols-3':'md:grid-cols-4'}`}>
                         {
                             products.map((item, index) =>
-                                <div>
+                              
                                     <div key={index} className='text-center border-2 border-black/10 rounded-xl' >
                                         <div className=' relative'>
                                             <h1 className='container mx-auto p-2 w-[300px] h-[280px] '>{item.img} </h1>
                                         </div>
                                         <div className=' absolute translate-x-1/2 -mt-3 '>
-                                            <img className=' flex pl-42 md:pl-25 ' src={CartImg} alt="" />
+                                            <img className=' flex pl-31 md:pl-25 ' src={CartImg} alt="" />
                                         </div>
                                         <div className='p-3 mt-5'>
                                             <h1 className='text-lg font-libre text-[#777777]'>{item.subtitle}</h1>
@@ -193,11 +199,11 @@ const ProductShop = () => {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                
                             )
                         }
                     </div>
-                    <div className=' w-full md:w-0  px-[30%]   p-10' >
+                    <div className={`w-full md:w-0    p-10 ${openLeftSide?'px-[30%]  ':'px-[40%] '}`} >
                 <div className='container flex justify-center items-center mx-auto  border border-black/10 w-fit rounded-xl'>
                     <button className=" text-[#7a7a7a] p-3 text-md md:text-lg px-3 md:px-6 ">Previous</button>
                 <button className=" text-white bg-primary p-3 text-md md:text-lg px-3 md:px-6 ">1</button>

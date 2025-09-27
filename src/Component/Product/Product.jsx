@@ -6,8 +6,7 @@ import product1 from '../../assets/products.1.png'
 import product2 from '../../assets/products.2.png'
 import product3 from '../../assets/products.3.png'
 import product4 from '../../assets/products.4.png'
-import product5 from '../../assets/products.5.png'
-import product6 from '../../assets/products.6.png'
+
 import Listbox1 from '../../assets/Listbox → Option (0).png'
 import Listbox2 from '../../assets/Listbox → Option (01).png'
 import Listbox3 from '../../assets/Listbox → Option (2).png'
@@ -224,7 +223,7 @@ const Product = () => {
                     </div>
 
                     <div className=' -ml-0 md:-ml-45 rounded-xl w-fit h-fit  '>
-                        <img className='w-full' src={viewImg} alt="" />
+                        <img className='w-[550px]' src={viewImg} alt="" />
                         <div className='flex gap-1 md:gap-2 mt-5 mb-8 w-full md:w-0 '>
                             <img onClick={() => setViewImg(product2)} className='w-26' src={Listbox1} alt="" />
                             <img onClick={() => setViewImg(Listbox2)} className='w-26' src={Listbox2} alt="" />
@@ -359,12 +358,12 @@ const Product = () => {
                             products.map((item, index) =>
                                 <div key={index} className='text-center border-2 border-black/10 rounded-xl' >
                                     <div className=' relative'>
-                                        <h1 className='container mx-auto p-2 w-full h-[280px] '>{item.img} </h1>
+                                        <h1 className='container mx-auto p-2 w-[300px] h-[280px]'>{item.img} </h1>
                                     </div>
-                                    <div className=' absolute translate-x-1/2 -mt-7 '>
+                                    <div className=' absolute translate-x-1/2 -mt-3 '>
                                         <img className=' flex pl-42 md:pl-25 ' src={CartImg} alt="" />
                                     </div>
-                                    <div className='p-3'>
+                                    <div className='p-3 mt-5'>
                                         <h1 className='text-lg font-libre text-[#777777]'>{item.subtitle}</h1>
                                         <div className='flex items-center justify-center gap-3'>
                                             <h1>{item.ratingStar}</h1>
@@ -372,7 +371,7 @@ const Product = () => {
 
 
                                         </div>
-                                        <h1 className='text-xl font-medium font-poppins'>{item.title}</h1>
+                                        <h1 className='text-lg font-medium font-poppins'>{item.title}</h1>
 
                                         <div className='flex gap-2 justify-center pt-2 items-center'>
                                             <h1 className='text-2xl font-poppins font-bold text-[#F53E32]'>{item.discountedPrice}</h1>

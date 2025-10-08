@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import PageName from '../PageName/PageName';
 import { BiSolidSquare } from 'react-icons/bi';
 import { BiSquare } from 'react-icons/bi';
@@ -20,6 +20,7 @@ import Stack from '@mui/material/Stack';
 import CartImg from '../../assets/cartImg.png'
 import { GoStar, GoStarFill } from 'react-icons/go';
 import { Link } from 'react-router';
+import { AuthContext } from '../../Context/AuthContext';
 
 
 
@@ -79,6 +80,9 @@ const products = [
 const Product = () => {
     const [sellectTab, setSellectTab] = useState("description")
     const [viewImg, setViewImg] = useState(product2)
+    const value = useContext(AuthContext)
+    console.log(value);
+    
     return (
         <div className='container mx-auto'>
             <PageName></PageName>

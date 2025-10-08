@@ -1,31 +1,35 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import logo from '../../src/assets/Page-1 1.png'
 import PageName from '../Component/PageName/PageName';
 import { IoIosEye, IoMdEyeOff } from 'react-icons/io';
 import { auth } from '../../firebase.config';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { AuthContext } from '../Context/AuthContext';
 
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState("");
+    const {createUser} =useContext(AuthContext)
+   
     
-        const handlesubmit = (e) => {
-            e.preventDefault();
-    
-            const email = e.target.email.value;
-            const password = e.target.password.value;
-            console.log({email,password});
-            if (!email && !password) {
-                return setError("Email and password are required")
-            }
-           
-           createUserWithEmailAndPassword(auth, email, password)
-        .then(res =>console.log(res))
-        .then(err=>console.log(err))  
-        }
-           
 
-        
+    const handlesubmit = (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log({ email, password });
+        if (!email && !password) {
+            return setError("Email and password are required")
+        }
+
+        createUser( email, password)
+            .then(res => console.log((res.user)))
+
+            .catch(err => console.log(err))
+    }
+
+
+
 
 
     return (
@@ -42,80 +46,80 @@ const SignUp = () => {
 
                 <form onSubmit={handlesubmit} >
                     <div className='md:flex gap-4 justify-center items-center'>
-                    <fieldset className="fieldset">
-                        <legend className="fieldset-legend text-xl ">First Name*</legend>
-                        <input type="text" className="input w-[350px]" placeholder="Enter Your First Name" />
-                    </fieldset>
-                    <fieldset className="fieldset">
-                        <legend className="fieldset-legend text-xl">Last Name*</legend>
-                        <input type="text" className="input w-[350px]" placeholder="Enter Your Last Name" />
-                    </fieldset>
+                        <fieldset className="fieldset">
+                            <legend className="fieldset-legend text-xl ">First Name*</legend>
+                            <input type="text" className="input w-[350px]" placeholder="Enter Your First Name" />
+                        </fieldset>
+                        <fieldset className="fieldset">
+                            <legend className="fieldset-legend text-xl">Last Name*</legend>
+                            <input type="text" className="input w-[350px]" placeholder="Enter Your Last Name" />
+                        </fieldset>
 
-                </div>
+                    </div>
 
-                <div className='md:flex gap-4 justify-center items-center'>
-                    <fieldset className="fieldset">
+                    <div className='md:flex gap-4 justify-center items-center'>
+                        <fieldset className="fieldset">
                             <legend className="fieldset-legend text-xl ">Email Address*</legend>
                             <input type="text" name='email' required className="input w-[350px] focus:outline-0 focus:border-primary" placeholder="Enter Your Email" />
                         </fieldset>
-                    <fieldset className="fieldset">
-                        <legend className="fieldset-legend text-xl">Phone Number*</legend>
-                        <input type="text" className="input w-[350px]" placeholder="Enter Your Phone Number" />
-                    </fieldset>
+                        <fieldset className="fieldset">
+                            <legend className="fieldset-legend text-xl">Phone Number*</legend>
+                            <input type="text" className="input w-[350px]" placeholder="Enter Your Phone Number" />
+                        </fieldset>
 
-                </div>
+                    </div>
 
-                <div className='md:flex gap-4 justify-center items-center'>
-                    <fieldset className="fieldset">
-                        <legend className="fieldset-legend text-xl ">Address*</legend>
-                        <input type="text" className="input w-[350px] md:w-[716px]" placeholder="Enter Your Email" />
-                    </fieldset>
-                </div>
+                    <div className='md:flex gap-4 justify-center items-center'>
+                        <fieldset className="fieldset">
+                            <legend className="fieldset-legend text-xl ">Address*</legend>
+                            <input type="text" className="input w-[350px] md:w-[716px]" placeholder="Enter Your Email" />
+                        </fieldset>
+                    </div>
 
-                <div className='md:flex gap-4 justify-center items-center'>
-                    <fieldset className="fieldset">
-                        <legend className="fieldset-legend text-xl ">City*</legend>
-                        <input type="text" className="input w-[350px]" placeholder="City" />
-                    </fieldset>
-                    <fieldset className="fieldset">
-                        <legend className="fieldset-legend text-xl">Post Code*</legend>
-                        <input type="text" className="input w-[350px]" placeholder="Post Code" />
-                    </fieldset>
+                    <div className='md:flex gap-4 justify-center items-center'>
+                        <fieldset className="fieldset">
+                            <legend className="fieldset-legend text-xl ">City*</legend>
+                            <input type="text" className="input w-[350px]" placeholder="City" />
+                        </fieldset>
+                        <fieldset className="fieldset">
+                            <legend className="fieldset-legend text-xl">Post Code*</legend>
+                            <input type="text" className="input w-[350px]" placeholder="Post Code" />
+                        </fieldset>
 
-                </div>
+                    </div>
 
-                <div className='md:flex gap-4 justify-center items-center'>
-                    <fieldset className="fieldset">
-                        <legend className="fieldset-legend text-xl ">Country*</legend>
-                        <input type="text" className="input w-[350px]" placeholder="Country" />
-                    </fieldset>
-                    <fieldset className="fieldset">
-                        <legend className="fieldset-legend text-xl">Region State*</legend>
-                        <input type="text" className="input w-[350px]" placeholder="Region/State" />
-                    </fieldset>
-                </div>
-                <div className='md:flex gap-4 justify-center items-center'>
-                    <fieldset className="fieldset relative">
-                        <legend className="fieldset-legend text-xl">Create a Password*</legend>
-                        <input type={showPassword ? 'text' : "password"} name='password' className="input w-[350px] md:w-[716px] focus:outline-0 focus:border-primary " placeholder="Enter Your Password" />
-                        <div onClick={() => setShowPassword(prev => !prev)} className=' z-50 absolute right-3 top-4 text-xl' >
-                            {
-                                showPassword ? <IoMdEyeOff /> : <IoIosEye />
-                            }
-                        </div>
-                    </fieldset>
-                </div>
-                <p className="my-2 text-red-500 ">{error}</p>
-                
-
+                    <div className='md:flex gap-4 justify-center items-center'>
+                        <fieldset className="fieldset">
+                            <legend className="fieldset-legend text-xl ">Country*</legend>
+                            <input type="text" className="input w-[350px]" placeholder="Country" />
+                        </fieldset>
+                        <fieldset className="fieldset">
+                            <legend className="fieldset-legend text-xl">Region State*</legend>
+                            <input type="text" className="input w-[350px]" placeholder="Region/State" />
+                        </fieldset>
+                    </div>
+                    <div className='md:flex gap-4 justify-center items-center'>
+                        <fieldset className="fieldset relative">
+                            <legend className="fieldset-legend text-xl">Create a Password*</legend>
+                            <input type={showPassword ? 'text' : "password"} name='password' className="input w-[350px] md:w-[716px] focus:outline-0 focus:border-primary " placeholder="Enter Your Password" />
+                            <div onClick={() => setShowPassword(prev => !prev)} className=' z-50 absolute right-3 top-4 text-xl' >
+                                {
+                                    showPassword ? <IoMdEyeOff /> : <IoIosEye />
+                                }
+                            </div>
+                        </fieldset>
+                    </div>
+                    <p className="my-2 text-red-500 ">{error}</p>
 
 
 
 
-                <div className='flex justify-between px-8 my-5 '>
-                    <button type='submit' className="btn btn-primary join-item text-lg">{" "} Signup</button>
-                    <h1 className='text-lg text-[#7a7a7a]'>Have an account?</h1>
-                </div>
+
+
+                    <div className='flex justify-between px-8 my-5 '>
+                        <button type='submit' className="btn btn-primary join-item text-lg">{" "} Signup</button>
+                        <h1 className='text-lg text-[#7a7a7a]'>Have an account?</h1>
+                    </div>
 
                 </form>
 

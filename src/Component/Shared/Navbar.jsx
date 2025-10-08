@@ -5,6 +5,7 @@ import { FaSearch } from 'react-icons/fa';
 import { VscAccount } from 'react-icons/vsc';
 import { FaRegHeart } from 'react-icons/fa6';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { Link, Links } from 'react-router';
 
 const Navbar = () => {
     const [isDropDownOpen ,SetIsDropDwonOpen]=useState(false)
@@ -55,9 +56,9 @@ const Navbar = () => {
 
             <div className=''>
                 <ul className='flex gap-10 '>
-                    <li className='text-lg font-medium font-poppins flex gap-3  items-center'><VscAccount/> Account</li>
+                    <Link to={"/signup"}><li className='text-lg font-medium font-poppins flex gap-3  items-center'><VscAccount/> Account</li></Link>
                     <li className='text-lg font-medium font-poppins flex gap-3 items-center'><FaRegHeart/> Wishlist</li>
-                    <li className='text-lg font-medium font-poppins flex gap-3 items-center'><AiOutlineShoppingCart />Cart</li>
+                    <Link to={"/cart"}><li className='text-lg font-medium font-poppins flex gap-3 items-center'><AiOutlineShoppingCart />Cart</li></Link>
                 </ul>
             </div>
 

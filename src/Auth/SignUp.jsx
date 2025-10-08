@@ -3,13 +3,14 @@ import logo from '../../src/assets/Page-1 1.png'
 import PageName from '../Component/PageName/PageName';
 import { IoIosEye, IoMdEyeOff } from 'react-icons/io';
 import { auth } from '../../firebase.config';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { AuthContext } from '../Context/AuthContext';
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState("");
-    const {createUser} =useContext(AuthContext)
+    const {createUser ,signInWithGoogle,SignInWithGithub} =useContext(AuthContext)
    
     
 
@@ -27,7 +28,16 @@ const SignUp = () => {
 
             .catch(err => console.log(err))
     }
-
+   const handleGoogle =()=>{
+        signInWithGoogle()
+        .then(res => console.log((res.user)))
+            .catch(err => console.log(err))
+   }
+   const handleGithub = () =>{
+    SignInWithGithub()
+    .then(res => console.log((res.user)))
+            .catch(err => console.log(err))
+   }
 
 
 
@@ -110,18 +120,16 @@ const SignUp = () => {
                         </fieldset>
                     </div>
                     <p className="my-2 text-red-500 ">{error}</p>
-
-
-
-
-
-
+                    
                     <div className='flex justify-between px-8 my-5 '>
                         <button type='submit' className="btn btn-primary join-item text-lg">{" "} Signup</button>
                         <h1 className='text-lg text-[#7a7a7a]'>Have an account?</h1>
                     </div>
-
                 </form>
+                 <div className="divider">OR</div>               
+                <button onClick={()=>handleGoogle()} className='flex gap-3 items-center text-xl border rounded-xl p-2 justify-center w-full text-[#7a7a7a] cursor-pointer active:scole-95 duration-300 bg-base-200 '>< FcGoogle/> <h1>Connect with Google</h1></button>
+                    
+                     <button onClick={()=>handleGithub()} className='flex gap-3 items-center text-xl border rounded-xl p-2 justify-center w-full text-[#7a7a7a] cursor-pointer active:scole-95 duration-300 bg-base-200'><FaGithub /><h1>Connect with Github</h1></button>
 
             </div>
         </div>

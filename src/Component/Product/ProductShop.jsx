@@ -5,7 +5,7 @@ import { IoMdGrid } from "react-icons/io";
 import { CiBoxList } from "react-icons/ci";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { products } from '../../Data/PopularProductData';
-
+import { Link } from 'react-router';
 import CartImg from '../../assets/cartImg.png'
 
 const ProductShop = () => {
@@ -172,7 +172,8 @@ const ProductShop = () => {
                         </div>
                     </div>
 
-                    <div className={`grid  gap-3 mt-10 ${openLeftSide?'md:grid-cols-3':'md:grid-cols-4'}`}>
+                   <Link to={"/product/1"}>
+                   <div className={`grid  gap-3 mt-10 ${openLeftSide?'md:grid-cols-3':'md:grid-cols-4'}`}>
                         {
                             products.map((item, index) =>
                               
@@ -203,6 +204,7 @@ const ProductShop = () => {
                             )
                         }
                     </div>
+                    </Link>
                     <div className={`w-full md:w-0    p-10 ${openLeftSide?'px-[30%]  ':'px-[40%] '}`} >
                 <div className='container flex justify-center items-center mx-auto  border border-black/10 w-fit rounded-xl'>
                     <button className=" text-[#7a7a7a] p-3 text-md md:text-lg px-3 md:px-6 ">Previous</button>

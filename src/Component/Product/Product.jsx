@@ -87,7 +87,7 @@ const Product = () => {
         <div className='container mx-auto'>
             <PageName></PageName>
             <div className='  relative'>
-                <div className='grid md:grid-cols-3 mt-20'>
+                <div className='md:flex w-full gap-5 mt-20'>
                     <div className='w-full md:w-[300px] border border-black/10 p-5 bg-black/1 rounded-lg  ' >
                         <div>
                             <h1 className=' text-2xl pb-3'>Product Category</h1>
@@ -227,7 +227,9 @@ const Product = () => {
                         </div>
                     </div>
 
-                    <div className=' -ml-0 md:-ml-45 rounded-xl w-fit h-fit  '>
+                 <div className=''>
+                       <div className='md:flex gap-5'>
+                        <div className=' rounded-xl w-fit h-fit  '>
                         <img className='w-[550px]' src={viewImg} alt="" />
                         <div className='flex md:gap-2 mt-5 mb-8 md:w-full  '>
                             <img onClick={() => setViewImg(product2)} className='w-26' src={Listbox1} alt="" />
@@ -239,7 +241,7 @@ const Product = () => {
                         </div>
                     </div>
 
-                    <div className='border border-black/10 -ml-0 md:-ml-30 rounded-xl p-7 h-fit space-y-4'>
+                    <div className='border border-black/10  rounded-xl p-7 h-fit space-y-4'>
                         <h1 className='font-libre text-2xl '>Seeds Of Change Oraganic Quinoa, Brown</h1>
                         <h1 className='font-poppins text-lg text-[#7a7a7a]' >Lorem ipsum dolor sit amet consectetur adipisicing elit. In, iure
                             minus error doloribus saepe natus?</h1>
@@ -310,9 +312,8 @@ const Product = () => {
                         </div>
 
                     </div>
-                </div>
-            </div>
-            <div className=' absolute md:inset-x-[27%] md:w-[64%] md:-bottom-[60%] rounded-lg p-4 border border-black/10'>
+                       </div>
+                       <div className=' mt-5 rounded-lg p-4 border border-black/10'>
                 <div className='flex gap-5 items-center border-b-2 border-black/10 '>
                     <h1 onClick={() => (setSellectTab("description"))} className={`font-semibold text-xl py-4 ${sellectTab == "description" && " border-b-4 border-green-300"}`}>Description</h1>
                     <h1 onClick={() => setSellectTab("review")} className={`font-semibold text-xl py-4 ${sellectTab == "review" && " border-b-4 border-green-300"}`}>Review</h1>
@@ -352,13 +353,17 @@ const Product = () => {
                 <hr className='text-black/10 mt-3' />
                 <p className='mt-2 text-lg '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio tempora deleniti, dolorem ducimus accusamus quibusdam quisquam iste earum magni velit, cumque necessitatibus vel odio natus culpa? Dolorum asperiores nemo quia.accusamus quibusdam quisquam iste earum magni velit, cumque necessitatibus vel odio natus culpa? Dolorum asperiores nemo quia.</p>
             </div>
+                 </div>
+                </div>
+            </div>
+            
 
-            <div className=' md:mt-60 mt-170'>
+            <div className='mt-5'>
                 <div className='text-center'>
                     <h1 className='font-libre font-bold text-4xl text-[#2B2B2D]'> Popular Products</h1>
                     <h1 className='font-poppins font-regular text-lg text-[#7A7A7A]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id neque <br /> assumenda ex amet qui atque?
                     </h1>
-                    <Link to={"/product/1"}>
+                    <Link to={"/product"}>
                     <div className='grid md:grid-cols-4 gap-3 mt-10'>
                         {
                             products.map((item, index) =>
